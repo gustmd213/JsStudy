@@ -4,7 +4,7 @@ const weather = document.querySelector("#weather");
 function onGeoOk(position) {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
-  const url = `http://localhost:3000/weather?lat=${lat}&lon=${lon}`;
+  const url = `https://hs-weatherapi.herokuapp.com/weather?lat=${lat}&lon=${lon}`;
   fetch(url).then((response) => {
     response.json().then((data) => {
       const city = document.querySelector("#weather span:first-child");
