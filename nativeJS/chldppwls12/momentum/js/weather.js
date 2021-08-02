@@ -1,19 +1,19 @@
-const API_KEY = config.API_KEY;
-
 function onGeoSuccess(position){
-  const lat = position.coords.latitude;
-  const lon = position.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+  const latitude  = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  const url = `https://weatheraaaaa.herokuapp.com/`;
   fetch(url)
     .then((response) => response.json())
     .then(data => {
-      const city = document.querySelector('#weather span:first-child');
-      const weather = document.querySelector('#weather span:last-child');
-      weather.innerText= `${data.weather[0].main} / ${data.main.temp}`;
-      city.innerText = data.name;
+      const weather = document.querySelector('.weather');
+      const weatherLocation = document.querySelector('.weather-location');
+      const weatherIcon = document.querySelector('.weather-icon');
+      weather.innerText = `${Math.floor(data.main.temp*10)/10}℃`
+      weatherLocation.innerText = data.name;
+      weatherIcon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`);
     })
 }
-function onGeoError(){
+function onGeoError(position){
   alert("Can't find you");
 }
 navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);

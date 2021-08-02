@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Gomentum</title>
+</head>
+<body>
+  <header>
+    <div id="search">
+      <button>Links</button>
+      <form action="https://www.google.com/search">
+        <label for="link"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"></label>
+        <input type="text" name="q" id="link">
+        <button>&#71</button>
+      </form>
+    </div>
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  <main>
+    <h2 id="clock" class="hidden"></h2> <!-- for clock-->
+    <form id="login-form">
+      <div id="name" class="hidden"></div>
+        <label for="name" >Hello, what's your name?</label>
+        <input type="text" required>
+        <button type="button" id="loginBtn">continue &#62</button>
+    </form>
+    <h1 id="greeting"></h1> <!-- for greeting -->
+    <form id="todo-form" class="hidden">
+      <label for="focus">What is your main focus for today?</label>
+      <input type="text" id="focus">
+    </form>
+    <ul id="todo-list"></ul> <!-- for todo list -->
+  </main>
+  <footer>
+    <div id="quote">
+      <span></span>
+      <span class="hidden"></span>
+    </div>
+    <!--
+    <form>
+      <button class="hidden">&#10094 Change name</button>
+      <button class="hidden">&#10150 Stay logged out</button>
+      <button class="hidden">&#10094 Email</button>
+      <button class="hidden">&#9906 Change password</button>
+    </form>
+  -->
+  </footer>
+  <script src="js/login.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/quote.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/todo.js"></script>
+  <script src="js/todorest.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/weather.js"></script>
+</body>
+</html>
