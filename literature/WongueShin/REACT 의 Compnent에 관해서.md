@@ -14,7 +14,7 @@ UI = View(State)
 <p>각 프로세스가 진행 될 때에, Lifecycle func이라고 불리는 특별한 함수가 실행된다.<br>이를 재정의하여 Comp를 제어하게 되므로, Lifecycle func에 대해 깊은 이해가 필요하다.</p>
 
 
-![LifeCycleOfComp](.\images\LifeCycleOfComp.jpeg)
+![LifeCycleOfComp](./images/LifeCycleOfComp.jpeg)
 
 > <i>figure 01</i> 각 프로세스에 대응하는 Lifecycle func을 표현한 다이어그램.
 
@@ -37,7 +37,7 @@ UI = View(State)
 
 컴포넌트 간에는 반드시 <i><b>Props</b></i>를 통해 데이터를 주고받고, <i><b>Props</b></i>는 컴포넌트 내부에서 변경되지 않는다.<br/>따라서 상속관계 양쪽에 대해서 고민할 필요가 없고, 아래 한 쪽 방향(<b>uni-directional</b>) 그리고 자기 자신에 대해서만 고민하면 된다.
 
-![Compnent in React](.\images\CompnentInReact.png)
+![Compnent in React](./images/CompnentInReact.png)
 
 > <i>figure 02</i>) 계층 기준으로 부모 자식 관계를 표현한 React 컴포넌트 관계도
 
