@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+const toDoList = document.querySelector('js-toDoList')
+const toDoForm = toDoList.querySelector('toDoForm')
+
+function generateToDo(text) {
+  var newToDo = document.createElement('li');
+  newToDo.innerText=text;
+  toDoList.appendChild(newToDo)
+}
+
+toDoForm.addEventListener("submit",generateToDo)
+=======
 const toDoList = document.querySelector('.js-toDoList')
 const toDoForm = document.querySelector('.js-toDoForm')
 const toDoInput = document.querySelector('.toDoInput')
@@ -44,3 +56,4 @@ function delToDo(e) {
 //toDoList.addEventListener('click',del하는 fuction)
 
 toDoForm.addEventListener("submit", handleToDoSubmit)
+>>>>>>> 67c30e625f1ac377631b4c790f1014a8b3b073bc

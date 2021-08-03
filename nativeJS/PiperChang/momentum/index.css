@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+body{
+    text-align: center;
+    ;
+}
+.header_wrapper{
+    position :fixed;
+    top: 0px;
+    background: yellow;  
+    width: 100%;
+    box-shadow: rgb(0,0,0 / 8%) 0px 0px 8px;
+}
+
+.header_logo{
+    float: left;
+=======
 body{
     text-align: center;
 }
@@ -75,4 +91,5 @@ li {
 
 .delButton{
   margin-left: 5px;
+>>>>>>> 67c30e625f1ac377631b4c790f1014a8b3b073bc
 }

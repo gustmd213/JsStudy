@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+const greeting = document.querySelector('js-greeting')
+
+function hadleGreetingSubmit(params) {
+  
+}
+greeting.addEventListener("submit",hadleGreetingSubmit);
+
+greting.style.color = "blue"
+=======
 const greeting = document.querySelector('.js-greeting')
 const greetingForm = document.querySelector('.js-greeting-form')
 const greetingInput = document.querySelector('.js-greeting-input')
@@ -32,3 +42,4 @@ function init() {
 }
 
 init()
+>>>>>>> 67c30e625f1ac377631b4c790f1014a8b3b073bc
