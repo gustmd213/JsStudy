@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 const App = () => {
-  const[board, setBoard] = useState(
+  let[maxNo, setmaxNo] = useState(2);
+  let[board, setBoard] = useState(
     [
       {
         brdno: 1,
@@ -18,8 +19,19 @@ const App = () => {
     ]
   );
 
+  const handleSaveData = (data) => {
+    console.log('codelogic04');
+    setmaxNo(maxNo++);
+    setBoard(board.concat(
+      {brdno:maxNo, brddate: new Date(), ...data}
+    ));
+    console.log(board);
+  }
+
   return(
     <div>
+      <BoardForm onSaveData = {handleSaveData} state= {{}}/>
+
       <table border ="1">
         <tbody>
           <tr align="center">
@@ -37,6 +49,25 @@ const App = () => {
         </tbody>
       </table>
     </div>
+  );
+}
+
+const BoardForm = (props) => {
+  let state = {}
+
+  const handleChange = (e) => {
+    state[e.target.name]= e.target.value
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.onSaveData(state);
+  }  
+  return(
+    <form onSubmit={handleSubmit}>
+      <input placeholder="title" name="brdtitle" onChange={handleChange}/>
+      <input placeholder="name" name="brdwriter" onChange={handleChange}/>
+      <button type="submit">Save</button>
+    </form>
   );
 }
 
