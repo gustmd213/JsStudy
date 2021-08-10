@@ -1,57 +1,85 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class App extends Component {
-  state = {
-    boards: [
+const App = () => {
+  let[maxNo, setmaxNo] = useState(2);
+  let[board, setBoard] = useState(
+    [
       {
-        brdno:1,
-        brdwriter: 'Lee SunSin',
+        brdno: 1,
+        brdwriter: 'Lee Sunsin',
         brdtitle: 'If you intend to live then you die',
         brddate: new Date()
       },
       {
         brdno: 2,
-        brdwriter: 'So SiNo',
-        brdtitle: 'Founder for two countries',
+        brdwriter: 'Lee sin',
+        brdtitle: 'Where to go',
         brddate: new Date()
       }
     ]
+  );
+
+  const handleSaveData = (data) => {
+    console.log('codelogic04');
+    setmaxNo(maxNo++);
+    setBoard(board.concat(
+      {brdno:maxNo, brddate: new Date(), ...data}
+    ));
+    console.log(board);
   }
 
-  render() {
-    const { boards } = this.state;
-   return (
-      <div>
-          <table border="1">
-            <tbody>
-              <tr align="center">
-                <td width="50">No.</td>
-                <td width="300">Title</td>
-                <td width="100">Date</td>
-              </tr>
-              {
-                boards.map(
-                  row => (<BoardItem key={row.brdno} row={row} />)
-                )
-              }
-            </tbody>
-          </table>
-      </div>
-    );
-  }
+  return(
+    <div>
+      <BoardForm onSaveData = {handleSaveData} state= {{}}/>
+
+      <table border ="1">
+        <tbody>
+          <tr align="center">
+            <td width = "50">No.</td>
+            <td width = "300">Title</td>
+            <td width = "100">Name</td>
+            <td width = "100">Date</td>
+          </tr>
+          {
+            board.map(post => 
+              (
+              <BoardItem key = {post.brdno} post={post}/>
+              ))
+          }
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
-class BoardItem extends React.Component {
-  render() {
-    return(
-      <tr>
-        <td>{this.props.row.brdno}</td>
-        <td>{this.props.row.brdtitle}</td>
-        <td style={{textAlign :'center'}}>{this.props.row.brdwriter}</td>
-        <td>{this.props.row.brddate.toLocaleDateString('ko-KR')}</td>
-      </tr>
-    );
+const BoardForm = (props) => {
+  let state = {}
+
+  const handleChange = (e) => {
+    state[e.target.name]= e.target.value
   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.onSaveData(state);
+  }  
+  return(
+    <form onSubmit={handleSubmit}>
+      <input placeholder="title" name="brdtitle" onChange={handleChange}/>
+      <input placeholder="name" name="brdwriter" onChange={handleChange}/>
+      <button type="submit">Save</button>
+    </form>
+  );
+}
+
+function BoardItem(props) {
+  return(
+    <tr>
+      <td>{props.post.brdno}</td>
+      <td>{props.post.brdtitle}</td>
+      <td>{props.post.brdwriter}</td>
+      <td>{props.post.brddate.toLocaleDateString('ko-KR')}</td>
+    </tr>
+  );
 }
 
 export default App;
