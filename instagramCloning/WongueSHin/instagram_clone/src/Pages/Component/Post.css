@@ -1,5 +1,61 @@
 #container{
-    display: fixed;
+    position: absolute;
+    top: 0;
     height: 100vh;
     width: 100vw;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#box{
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    height: 80vh;
+    border-radius: 2.5%;
+    transform: translate(-50%, -50%);
+
+}
+
+#upline{
+    border-bottom: 1px rgba(0, 0, 0, 0.3) solid ;
+    height: 3rem;
+}
+
+#title{
+    text-align: center;
+}
+
+#xmark{
+    position: absolute;
+    top: 5%;
+    left: 90%;
+}
+
+#postbox{
+    height: calc(100% - 8.5em);
+    margin: 2rem 20% 2rem 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#picture{
+    height: 5rem;
+}
+
+#text{
+    text-align: center;
+    margin: 1rem 0;
+}
+
+#selectbutton{
+    padding: 0.2em 0.5em;
+    background: rgb(0,149,246);
+    border: 0;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
 }
