@@ -11,9 +11,9 @@ import './Home.css';
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 const Home = () => {
-    /*
+    
     let [isLoading, setIsLoading] = useState(true);
-
+    
     if (isLoading){
         setTimeout(() => {
             console.log(isLoading);
@@ -21,8 +21,7 @@ const Home = () => {
             console.log(isLoading);
         }, 2000);
     }
-    */
-    let [isLoading, setIsLoading] = useState(false);
+    
 
     let[navigateProps, setNavigateProps] = useState(null);
 
