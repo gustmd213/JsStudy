@@ -59,7 +59,10 @@
     border-radius: 4px;
     font-weight: bold;
 }
-
+#chooseFile{
+    width: 0;
+    height: 0;
+}
 #fileform{
     display: flex;
     flex-direction: column;
