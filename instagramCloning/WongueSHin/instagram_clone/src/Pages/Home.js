@@ -16,9 +16,7 @@ const Home = () => {
     
     if (isLoading){
         setTimeout(() => {
-            console.log(isLoading);
             setIsLoading(false);
-            console.log(isLoading);
         }, 2000);
     }
     
