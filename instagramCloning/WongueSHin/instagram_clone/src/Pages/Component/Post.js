@@ -72,13 +72,17 @@ function loadFile(e){
 }
 
 function ExitPost (e, postImage, history, popupSetter) {
-    console.log(popupSetter);
+    console.log(e.target.className);
     if(e.target.className === 'exit' && postImage === null){
+        popupSetter(false);
         return history.push('/');
     }
-    return(
-    popupSetter(true)
-    );
+    if (e.target.className === 'exit'){
+        return(
+        popupSetter(true)
+        );
+    }
+    return
 }
 
 const AskOneMore = ({stateSetter}) => {
