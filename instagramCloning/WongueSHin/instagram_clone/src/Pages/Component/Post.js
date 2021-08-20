@@ -5,21 +5,24 @@ import './Post.css';
 
 const Post = (props) => {
     const history = props.history;
-    const [postImage, setPostImage] = useState('test');
+    const [postImage, setPostImage] = useState([]);
     const [postText, setPostText] = useState(null);
     const [shouldPopup, setShouldPopUp] = useState(false);
-    
-
+    console.log(postImage);
+    if (postImage.length === 0){
     return(
-        <Wait history = {history} poststate = {postImage} postsetter = {setPostImage} shouldPopup={shouldPopup} setShouldPopUp={setShouldPopUp}/>
+        <Wait history = {history} imagestate = {postImage} postsetter = {setPostImage} shouldPopup={shouldPopup} setShouldPopUp={setShouldPopUp}/>
+    )
+    }
+    return(
+        <Write history = {history} imagestate = {postImage} postsetter = {setPostImage} postText= {postText} textsetter={setPostText} shouldPopup={shouldPopup} setShouldPopUp = {setShouldPopUp}/>
     )
 }
 
-function Wait ({history, poststate, postsetter, shouldPopup, setShouldPopUp}) {
-    let postImage = poststate;
+function Wait ({history, imagestate, postsetter, shouldPopup, setShouldPopUp}) {
+    let postImage = imagestate;
     let setPostImage = postsetter;
     const imageInput = useRef();
-    console.log(shouldPopup);
     if (shouldPopup === true){
         return(
         <div>
@@ -41,7 +44,7 @@ function Wait ({history, poststate, postsetter, shouldPopup, setShouldPopUp}) {
                 </div>
             </div>
         </div>
-        <AskOneMore stateSetter={setShouldPopUp}/>
+        <AskOneMore shouldSetter={setShouldPopUp} postSetter = {setPostImage}/>
         </div>
         );
     }
@@ -59,7 +62,7 @@ function Wait ({history, poststate, postsetter, shouldPopup, setShouldPopUp}) {
                 </span>
                 <form id = 'fileform' method='post' encType='multipart/form-data' onSubmit={(event)=>{event.preventDefault()}}>
                     <button id = 'selectbutton' onClick={()=> {imageInput.current.click()}}>컴퓨터에서 선택</button>
-                    <input type='file' id='chooseFile' name='chooseFile' accept='image/*' onChange={e => {loadFile(e)}} ref={imageInput}/>
+                    <input type='file' id='chooseFile' name='chooseFile' accept='image/*' onChange={async e => {await loadFile(e, postImage ,setPostImage)}} ref={imageInput}/>
                 </form>
                 </div>
             </div>
@@ -67,13 +70,53 @@ function Wait ({history, poststate, postsetter, shouldPopup, setShouldPopUp}) {
     );
 }
 
-function loadFile(e){
-    console.log(e.target.files[0]);
+const loadFile = async(e,postImage, setPostImage) =>{
+    setPostImage([...postImage, e.target.files[0]]);
+    return
+}
+
+const Write = ({history, imagestate, postsetter, postText, textsetter, shouldPopup, setShouldPopUp}) => {
+    if (shouldPopup) {
+        return(
+        <div>
+        <div id = 'container' className='exit'  onClick={(e)=>{ExitPost(e, imagestate, history, setShouldPopUp)}}>
+            <div id="box">
+                <div id ="upline">
+                    <h4 id='title'>작성</h4>
+                    <span id='xmark' className='exit'>X</span>
+                </div>
+
+                <div id = 'writecontent'>
+                    <div id ='imgcontainer'></div>
+                    <div id ='textcontainer'></div>
+                </div> 
+            </div>
+        </div>
+        <AskOneMore shouldSetter={setShouldPopUp} postSetter = {postsetter}/>
+        </div>
+        );
+    }
+    return(
+        <div>
+        <div id = 'container' className='exit'  onClick={(e)=>{ExitPost(e, imagestate, history, setShouldPopUp)}}>
+            <div id="box">
+                <div id ="upline">
+                    <h4 id='title'>작성</h4>
+                    <span id='xmark' className='exit'>X</span>
+                </div>
+
+                <div id = 'writecontent'>
+                    <div id ='imgcontainer'></div>
+                    <div id ='textcontainer'></div>
+                </div> 
+            </div>
+        </div>
+        </div>
+    );
 }
 
 function ExitPost (e, postImage, history, popupSetter) {
-    console.log(e.target.className);
-    if(e.target.className === 'exit' && postImage === null){
+    if(e.target.className === 'exit' && postImage.length === 0){
         popupSetter(false);
         return history.push('/');
     }
@@ -85,7 +128,7 @@ function ExitPost (e, postImage, history, popupSetter) {
     return
 }
 
-const AskOneMore = ({stateSetter}) => {
+const AskOneMore = ({shouldSetter, postSetter}) => {
     return(
         <div id='ground'>
             <div id='askbox'>
@@ -93,13 +136,13 @@ const AskOneMore = ({stateSetter}) => {
                     <h3 id='ask'>게시물을 삭제하시겠어요?</h3>
                     <span id='warn'>지금 나가면 변경 사항이 모두 사라집니다.</span>
                 </div>
-                <Link id = 'delink'to = '/'>
+                <Link id = 'delink' to = '/' onClick={()=>{postSetter([])}}>
                     <div id = 'del'>
                         <span id = 'deltxt'>삭제</span>   
                     </div>
                 </Link>  
                 <div id = 'cancle'>
-                <p id ='cancletxt' onClick = {() => {stateSetter(false)}}>
+                <p id ='cancletxt' onClick = {() => {shouldSetter(false)}}>
                     취소
                 </p>
                 </div>

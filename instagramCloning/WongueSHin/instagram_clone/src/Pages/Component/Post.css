@@ -11,26 +11,48 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 80vw;
-    height: 80vh;
+    width: 50rem;
+    height: 30rem;
     border-radius: 15px;
     transform: translate(-50%, -50%);
 
 }
 
 #upline{
-    border-bottom: 1px rgba(0, 0, 0, 0.3) solid ;
+    border-bottom: 0.5px rgba(0, 0, 0, 0.2) solid ;
     height: 3rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #title{
+    width: 100%;
     text-align: center;
+    margin: 0.8rem 0;
 }
 
 #xmark{
     position: absolute;
-    top: 5%;
     left: 93%;
+    margin: 0.8rem 0;
+}
+
+#writecontent{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: calc(100% - 3rem);
+}
+
+#imgcontainer{
+    width: 60%;
+    height: 100%;
+    border-right: 0.5px rgba(0, 0, 0, 0.2) solid;
+}
+
+#textcontainer{
+    width: 39.9%;
+    height: 100%;
 }
 
 #postbox{
