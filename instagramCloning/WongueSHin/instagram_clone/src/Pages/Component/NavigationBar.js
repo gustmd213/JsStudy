@@ -5,11 +5,10 @@ import './NavigationBar.css';
 
 
 const NavigationBar = ({props}) => {
-    console.log(props);
     return(
-        <div class = "NavigationBar">
+        <div className = "NavigationBar">
             <img id = 'textLogo' src = '/img/textLogo.png'/>
-            <div class = 'NavigationUI'>
+            <div className = 'NavigationUI'>
             <img id = 'home' src = '/Navigation/home.png'/>
 
             <Link to ='/post'>

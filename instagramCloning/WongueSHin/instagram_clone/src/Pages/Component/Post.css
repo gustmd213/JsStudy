@@ -1,5 +1,149 @@
 #container{
-    display: fixed;
+    position: absolute;
+    top: 0;
     height: 100vh;
     width: 100vw;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#box{
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50rem;
+    height: 30rem;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+
+}
+
+#upline{
+    border-bottom: 0.5px rgba(0, 0, 0, 0.2) solid ;
+    height: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#title{
+    width: 100%;
+    text-align: center;
+    margin: 0.8rem 0;
+}
+
+#xmark{
+    position: absolute;
+    left: 93%;
+    margin: 0.8rem 0;
+}
+
+#writecontent{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: calc(100% - 3rem);
+}
+
+#imgcontainer{
+    width: 60%;
+    height: 100%;
+    border-right: 0.5px rgba(0, 0, 0, 0.2) solid;
+}
+
+#textcontainer{
+    width: 39.9%;
+    height: 100%;
+}
+
+#postbox{
+    height: calc(100% - 8.5em);
+    margin: 2rem 20% 2rem 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#picture{
+    height: 5rem;
+}
+
+#text{
+    text-align: center;
+    margin: 1rem 0;
+}
+
+#selectbutton{
+    padding: 0.2em 0.5em;
+    background: rgb(0,149,246);
+    border: 0;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+#chooseFile{
+    width: 0;
+    height: 0;
+}
+#fileform{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#chooseFile{
+    visibility: hidden;
+}
+
+#ground{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.6);
+    transform: translate(-50%, -50%);
+}
+
+#askbox{
+    display: flex;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20rem;
+    height: 11rem;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    text-align: center;
+}
+#asktext{
+    border-bottom: 0.5px rgba(0, 0, 0, 0.3) solid;
+    padding: 1em 0;
+    flex-wrap: wrap;
+}
+#ask{
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.3em;
+}
+#warn{
+    font-size: 0.85em;
+    color: rgba(0,0,0,0.3);
+}
+#del{
+    border-bottom: 0.5px rgba(0, 0, 0, 0.3) solid;
+    padding: 0.7em 0;
+}
+#delink{
+    display: inline;
+    text-decoration: none;
+    height: 3rem;
+}
+
+#deltxt{
+    text-align: center;
+    color: rgb(237,73,86);
+    font-weight: bold;
 }

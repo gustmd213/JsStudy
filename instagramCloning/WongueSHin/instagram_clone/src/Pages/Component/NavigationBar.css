@@ -1,29 +1,34 @@
 .NavigationBar{
     display: flex;
-    height: 4vh;
-    padding: 3px 8vw;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3) ;
+    height: 6.5vh;
+    padding: 3px 10vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) ;
 }
 
 #textLogo{
-    margin: auto 0;
+    margin: 0.3rem 0;
+    height: 1.8em;
 }
 .NavigationUI{
     margin-left: auto;
-    margin-top: 0.75vh;
+    margin-top: 0.4em;
     display: flex;
-    width: 13vw;
-    justify-content: space-between;
+    width: 7em;
+    justify-content:space-between;
+}
+a{
+    height: 2vh;
+    display: flex;
 }
 #home{
-    max-height: 2.1vh;
+    height: 1.5em;
 }
 #post {
-    max-height: 2.35vh;
+    height: 1.5em;
 }
 #smallUserProfile {
     background: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.5em;
+    width: 1.5em;
 }
