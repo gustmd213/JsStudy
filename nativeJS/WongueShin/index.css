@@ -16,6 +16,11 @@ body{
     z-index: 2;
 }
 
+#weatherContainer{
+    margin-right: 5px;
+}
+
+
 #weatherIcon{
     position: relative;
     left: 35px;
@@ -44,7 +49,7 @@ body{
 }
 
 .main{
-    height: 85vh;
+    height: 90vh;
     background: radial-gradient(rgba(124, 124, 124, 0.1), 60% , rgba(32, 32, 32, 0.1), 85%, rgba(0, 0, 0, 0.3));
     margin: 0px;
     padding: 15px;
@@ -74,6 +79,26 @@ body{
     font-size: 45px;
 }
 
+#greetXmark{
+    margin-left: 10px;
+    position: relative;
+    top: 5px;
+    visibility: hidden;
+    opacity: 1%;
+}
+
+.popup{
+    transition-property: all;
+    transition-duration: 200ms;
+    opacity: 50% !important;
+}
+
+.popoff{
+    transition-property: all;
+    transition-duration: 200ms;
+    opacity: 0% !important;
+}
+
 .hide {
     display: none;
 }
@@ -82,10 +107,6 @@ body{
     display: block;
 }
 
-.js-form{
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
 
 .js-input{
     background: linear-gradient(to top, rgba(11,11,11,0.65), 50%, rgba(124, 124, 124, 0.068));

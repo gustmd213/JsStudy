@@ -42,10 +42,19 @@ const quotes = [
   },
 ];
 
-const quote = document.querySelector('#quote span:first-child');
-const author = document.querySelector('#quote span:last-child');
+const quote = document.querySelector('.quote');
+const div = document.createElement('div');
 
-const todayQuote = quotes[Math.floor(Math.random() * quotes.length)]
+div.classList.add('quote-author');
 
-quote.innerText = todayQuote.quote;
-author.innerText = todayQuote.author;
+const random =parseInt(Math.random()*quotes.length);
+quote.innerText = quotes[random]['quote'];
+
+quote.addEventListener('mouseover', (event) => {
+  div.innerText =quotes[random]['author'];
+  quote.append(div);
+})
+
+quote.addEventListener('mouseout', (event) => {
+  div.remove();
+})

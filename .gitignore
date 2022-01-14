@@ -1,2 +1,7 @@
+<<<<<<< HEAD
+# APIFIle
+config.js
+=======
+.config.js
 .DS_Store
-.DS_Store
+>>>>>>> 67c30e625f1ac377631b4c790f1014a8b3b073bc

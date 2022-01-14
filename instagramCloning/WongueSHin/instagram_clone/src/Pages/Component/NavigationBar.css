@@ -1,0 +1,34 @@
+.NavigationBar{
+    display: flex;
+    height: 6.5vh;
+    padding: 3px 10vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) ;
+}
+
+#textLogo{
+    margin: 0.3rem 0;
+    height: 1.8em;
+}
+.NavigationUI{
+    margin-left: auto;
+    margin-top: 0.4em;
+    display: flex;
+    width: 7em;
+    justify-content:space-between;
+}
+a{
+    height: 2vh;
+    display: flex;
+}
+#home{
+    height: 1.5em;
+}
+#post {
+    height: 1.5em;
+}
+#smallUserProfile {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    height: 1.5em;
+    width: 1.5em;
+}

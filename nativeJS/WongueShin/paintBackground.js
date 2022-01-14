@@ -3,8 +3,6 @@ const imagePath = `backgroundPicture/image0${imageNumber}.jpg`
 const docBody = document.querySelector('body');
 
 function init(){
-    console.log(docBody);
-    console.log(imagePath);
     docBody.style.backgroundImage = `url(${imagePath})`;
     docBody.style.backgroundSize = 'cover';
     docBody.style.backgroundRepeat = 'no-repeat';

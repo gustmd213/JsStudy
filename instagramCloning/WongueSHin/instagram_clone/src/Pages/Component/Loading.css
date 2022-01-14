@@ -1,0 +1,12 @@
+#Load{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+#logo{
+    opacity: 0.3;
+    height: 10vh;
+    display: block;
+    margin: auto;
+}

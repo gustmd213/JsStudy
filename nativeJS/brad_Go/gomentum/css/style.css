@@ -1,0 +1,253 @@
+.hidden {
+  display: none;
+}
+
+#search button {
+  float: left;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.822);
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 2vh;
+  margin-left: 0.5vh;
+}
+
+#search button:hover {
+  color: rgba(255, 255, 255, 0.979);
+}
+
+#search label {
+  float: left;
+  margin-top: 1.7vh;
+  margin-left: 0.3em;
+}
+
+#search img {
+  height: 1.2em;
+  margin-top: 0.5vh;
+  filter: invert(100%) brightness(90%);
+}
+
+#search img:hover {
+  filter: invert(100%) brightness(100%);
+}
+
+#search input {
+  float: left;
+  background: none;
+  border: none;
+  outline: none;
+  margin-left: 1em;
+  font-size: 1em;
+  font-weight: 600;
+  color: white;
+  margin-top: 1em;
+}
+
+#search input:hover {
+  border-bottom: 2px solid white;
+}
+
+#weather {
+  clear: left;
+  position: absolute;
+  top: 0%;
+  right: 1%;
+}
+
+#weather img {
+  width: 3em;
+}
+
+#weather span {
+  position: relative;
+  transform: translate(0%, -60%);
+}
+
+#weather img + span {
+  display: inline-block;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+#weather span:last-child {
+  display: block;
+  width: inherit;
+  text-align: right;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  background: no-repeat center fixed;
+  background-size: cover;
+  overflow: hidden;
+  color: white;
+
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#clock {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -130%);
+  font-size: 22vh;
+}
+
+#greeting {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 5%);
+  font-size: 7.2vh;
+}
+
+#login-form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+#login-form label {
+  display: block;
+  font-size: 3em;
+  font-weight: 500;
+}
+
+#login-form input {
+  display: block;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  font-size: 3em;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+}
+
+#login-form button {
+  border: 2px solid white;
+  border-collapse: ridge;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 12px rgb(0 0 0 / 15%);
+  outline: 0;
+  margin-top: 1em;
+  padding: 10px 20px 10px 20px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: white;
+}
+
+#login-form button:hover {
+  background: #f3f3f367;
+}
+
+#todo-form {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -58%);
+  font-size: 4.5vh;
+  text-align: center;
+}
+
+#todo-form label {
+  display: block;
+  font-weight: 500;
+}
+
+#todo-form input {
+  width: 60vmin;
+  border: none;
+  border-bottom: 2px solid white;
+  background: none;
+  outline: none;
+  font-size: 4.5vh;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+}
+
+#todo-list {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+}
+
+#title {
+  position: inherit;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -225%);
+  font-size: 1.4em;
+  font-weight: 900;
+}
+
+#todo-list input {
+  height: 2.3em;
+}
+
+#todo-list li {
+  list-style: none;
+  font-size: 2.3em;
+  font-weight: 600;
+  text-align: center;
+  transform: translate(-3%, -60%);
+}
+
+#todo-list span {
+  padding-left: 0.4em;
+}
+
+#todo-list button {
+  border: none;
+  background: none;
+  transform: translate(0%, -40%);
+  padding-left: 1em;
+  filter: invert(50%) sepia(30%) brightness(200%);
+}
+
+#todo-list button:hover {
+  background: rgba(128, 128, 128, 0.473);
+  box-shadow: 0 0 12px rgb(0 0 0 / 15%);
+}
+
+#quote {
+  position: absolute;
+  display: block;
+  height: 5vh;
+  width: 50%;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, 50%);
+  font-size: 2.5vh;
+  text-align: center;
+}
+
+#quote:hover {
+  transition-timing-function: ease-in-out 5s;
+  transform: translate(-50%, 10%);
+}
+
+#quote span:last-child {
+  display: block;
+  margin-top: 0.1em;
+  text-align: center;
+  color: rgba(231, 231, 231, 0.801);
+  font-size: 2vh;
+  font-weight: 500;
+}

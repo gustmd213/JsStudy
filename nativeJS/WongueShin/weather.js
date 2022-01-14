@@ -1,16 +1,12 @@
-const API_KEY = OPEN_API_KEY;
-
 function onGeo(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
-    console.log(`lat: ${latitude}\nlong: ${longitude}`);
-    const queryurl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;
+    const queryurl = `https://weather-open-api.herokuapp.com/query?lat=${latitude}&lon=${longitude}`;
     fetch(queryurl)
         .then(response => response.json())
         .then(data => {
             const weatherDataList = [data.weather[0].icon, data.name, data.main.temp, ];
             //                       weatherIcon           cityName   currentTemp      
-            console.log(weatherDataList);
             makeWeatherInfo(weatherDataList);
             setWeatherStyle()
     });

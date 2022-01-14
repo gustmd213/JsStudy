@@ -19,7 +19,6 @@ function loadLocalData() {
 }
 
 function drawList(localData) {
-    console.log(`localData.length = ${localData.length}     localData = ${localData}`);
     if (localData.length == 0) {
         toDoUi.innerHTML = '';
         return

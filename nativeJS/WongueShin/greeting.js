@@ -1,18 +1,22 @@
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
     greeting = document.querySelector(".js-greetings"),
-    resetname = document.querySelector(".reset-name"),
     date = new Date(),
     hours = date.getHours();
 
 const USER_LS = "currentUser",
-    SHOWING_CN = 'showing';
-    HIDE_CN = 'hide'
+      HIDE_CN = 'hide';
 
+function init() {
+    loadName();
+}
+    
 function loadName(){
     const currentUser = localStorage.getItem(USER_LS);
     if (currentUser == null) {
-        form.classList.add(SHOWING_CN);
+        if (form.classList.contains(HIDE_CN)){
+            form.classList.toggle(HIDE_CN);
+        }
         askForName();
     }
     else {
@@ -35,26 +39,41 @@ function askForName(){
 }
 
 function paintGreeting(text) {
-    form.classList.remove(SHOWING_CN);
-    form.classList.add(HIDE_CN);
-    greeting.classList.add(SHOWING_CN);
+    if (!form.classList.contains(HIDE_CN)){
+        form.classList.toggle(HIDE_CN);
+    }
+    if (greeting.classList.contains(HIDE_CN)){
+        greeting.classList.toggle(HIDE_CN);
+    }
     if (hours < 12) { 
-        greeting.innerText = `Good morning, ${text}`;
+        greeting.innerHTML = `Good morning, ${text}<span id='greetXmark'>&#10006;</span>`;
     }
     else if (hours < 18) {
-        greeting.innerText = `Good afternoon, ${text}`;
+        greeting.innerHTML = `Good afternoon, ${text}<span id='greetXmark'>&#10006;</span>`;
     }
     else{
-        greeting.innerText = `Good evening, ${text}`;
+        greeting.innerHTML = `Good evening, ${text}<span id='greetXmark'>&#10006;</span>`;
     }
+    xmark = greeting.querySelector('#greetXmark')
+    xmark.addEventListener("click", handleClick);
+
+    formAndGreetDiv = document.querySelector('.form-and-nametxt');
+    formAndGreetDiv.addEventListener("mouseover", popup)
+    formAndGreetDiv.addEventListener("mouseout", popoff)
 }
 
-function resetName(){
-
+function popup(){
+    console.log('mousein')
+    xmark.style.visibility = 'visible';
+    xmark.classList.remove('popoff');
+    xmark.classList.add('popup');
 }
 
-function init() {
-    loadName();
+function popoff(){
+    console.log('mouseout')
+    xmark.classList.remove('popup');
+    xmark.classList.add('popoff')
+    xmark.style.visibility = 'hidden';
 }
 
 function handleClick(){
@@ -62,15 +81,13 @@ function handleClick(){
         return
     }
     console.log('remove')
+    greeting.innerHTML = '';
     localStorage.removeItem("currentUser");
-    if(greeting.classList.contains("showing")) {
-        greeting.classList.toggle("showing");
-        form.classList.toggle('hide');
+    if(!greeting.classList.contains(HIDE_CN)) {
+        form.classList.toggle(HIDE_CN);
     }
     init();
 }
-
-resetname.addEventListener("click", handleClick);
 
 
 init();

@@ -1,3 +1,289 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  padding: 20px 15px;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+}
+
+button,
+input,
+textarea{
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  font-size: 22px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.link-box{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.link-input{
+  width: 50%;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+.link-input:hover{
+  opacity: 0.7;
+  cursor: pointer;
+  border-bottom: 2px solid #fff;
+  transition: opacity 200ms ease-in;
+}
+
+.links{
+  margin-right: 6px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.fa-search{
+  border-style: none;
+  font-size: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+}
+.fa-search:hover{
+  cursor: pointer;
+}
+
+.weather-box{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.weather-info{
+  display: flex;
+  align-items: center;
+}
+.weather{
+  font-size: 23px;
+}
+.weather-location{
+  font-size: 15px;
+  font-weight: 700;
+}
+.weather-icon{
+  width: 50px;
+  height: 50px;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+}
+
+.clock{
+  font-size: 80px;
+  font-weight: 800;
+}
+.greeting{
+  font-size: 30px;
+  margin-bottom: 25px;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+.question{
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.ask-name{
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.quote-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+}
+.quote{
+  text-align: center;
+  margin-bottom: 2px;
+}
+.quote:hover{
+  cursor: pointer;
+}
+.quote-author{
+  font-size: 12px;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.focus-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.focus-delete-btn:hover{
+  cursor: pointer;
+}
+input{
+  width: 80%;
+  margin-bottom: 10px;
+}
+.login-btn, .focus-btn{
+  width: 30%;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+.login-btn:active,
+.focus-btn:active,
+.login-btn:hover,
+.focus-btn:hover
+{
+  background-color: #fff;
+  color: black;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+
+.focus-box{
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.focus{
+  margin-right: 20px;
+}
+
+.todo{
+  display: none;
+}
+
+@media screen and (min-width: 768px){
+  .clock{
+    font-size: 120px;
+    font-weight: 600;
+  }
+  main{
+    margin-bottom: 20px;
+  }
+  .greeting{
+    font-size: 35px;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+  }
+  .weather-icon{
+    width: 40px;
+    height: 40px;
+  }
+
+  .todo{
+    position: fixed;
+    display: block;
+    text-align: right;
+    cursor: pointer;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+
+    z-index: 100;
+  }
+  .todo:hover{
+    color: rgb(190, 189, 189);
+  }
+  .modal{
+    cursor:initial;
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    width: 320px;
+    background-color: #fff;
+    color: black;
+    padding: 20px 20px;
+    border-radius: 5px;
+    text-align: left;
+  }
+  
+  .modal > span{
+    font-size: 24px;
+    display: inline-block;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .modal ul{
+    padding: 0;
+    font-weight: 500;
+  }
+  .modal .todo-list{
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+  }
+  .modal li{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .modal li:last-child{
+    margin-bottom: 20px;
+  }
+  .modal .checkbox-todo{
+    display: flex;
+    align-items: center;
+  }
+  .li-check{
+    display: inline;
+    width: fit-content;
+    margin: 0;
+    margin-right: 10px;
+  }
+  .fa-times{
+    cursor: pointer;
+  }
+  .fa-times:hover{
+    color: rgb(190, 189, 189);
+  }
+  
+  .todo .new-todo-input{
+    font-size: 18px;
+    margin: 0;
+    color: black;
+    width: 100%;
+    border-bottom: 1px solid rgba(165, 160, 160);
+  }
+  
+  .done{
+    text-decoration: line-through;
+  }
+}
+
 .hidden{
   display: none;
 }
+

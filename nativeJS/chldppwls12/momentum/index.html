@@ -1,38 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Momentum App</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <form class="login-form hidden">
-    <input required maxlength="15" type="text" placeholder="What is your name?">
-    <button>LogIn</button>
-  </form>
-  <h2 id="clock">00:00:00</h2>
-  <h1 id="greeting" class="hidden"></h1>
-  <form id="todo-form">
-    <input type="text" placeholder="Write a To Do and Press Enter" required>
-  </form>
-  <ul id="todo-list">
-  </ul>
-  <div id="quote">
-    <span></span>
-    <span></span>
-  </div>
-  <div id="weather">
-    <span></span>
-    <span></span>
-  </div>
-  <script src="js/config.js"></script>
-  <script src="js/greeting.js"></script>
-  <script src="js/clock.js"></script>
-  <script src="js/quote.js"></script>
-  <script src="js/background.js"></script>
-  <script src="js/todo.js"></script>
-  <script src="js/weather.js"></script>
+  <header>
+    <!-- <div class="link-box">
+      <div class="links">Links</div>
+      <i class="fas fa-search"></i>
+    </div> -->
+    <form class="link-box" action="https://www.google.com/search" method="GET">
+      <div class="links">Links</div>
+      <button class="fas fa-search" type="submit"></button>
+      <input type="text" class="link-input" name="q">
+    </form>
+    <div class="weather-box">
+      <div class="weather-info">
+        <img src="" alt="weather-icon" class="weather-icon">
+        <strong class="weather"></strong>
+      </div>
+      <div class="weather-location"></div>
+    </div>
+  </header>
+  <main>
+    <strong class="clock">00:00</strong>
+    <!-- login 했을 때 -->
+    <div class="is-login">
+      <div class="greeting"></div>
+      <div class="question">What is your main focus<br /> for today?</div>
+      <form class="focus-form">
+        <input required type="text" class="focus-input">
+        <button type="submit" class="focus-btn">Submit</button>
+      </form>
+      <div class="focus-box">
+        <div class="focus"></div>
+        <i class="focus-delete-btn"></i>
+      </div>
+    </div>
+    <!-- login 안했을 때 -->
+    <div class="is-not-login">
+      <div class="ask-name">What is your name?</div>
+      <form action="" class="login-form">
+        <input required type="text" class="login-input">
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+    </div>
+  </main>
+  <section>
+    <div class="quote-box">
+      <div class="quote">
+      </div>
+    </div>
+  </section>
+  <section class="todo">
+    <span>Todo</span>
+    <section class="modal hidden">
+      <span>Today</span>
+      <ul>
+      </ul>
+      <form action="" class="todo-form">
+        <input type="text" placeholder="New Todo" required class="new-todo-input">
+      </form>
+    </section>
+  </section>
+  <script src="./js/config.js"></script>
+  <script src="./js/clock.js"></script>
+  <script src="./js/greeting.js"></script>
+  <script src="./js/quote.js"></script>
+  <script src="./js/weather.js"></script>
+  <script src="./js/background.js"></script>
+  <script src="./js/focus.js"></script>
+  <script src="./js/todo.js"></script>
 </body>
+
 </html>
